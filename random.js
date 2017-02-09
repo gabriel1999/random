@@ -1,60 +1,122 @@
 var namespace = "http://www.w3.org/2000/svg"
 
 
-// Fill in this function so that it draws something using SVG shapes!
-// You need to use at least 3 different types of shape.
-// Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createFirstScene() {
     
+    makeRect(10, 35, "12%", "100%", "#00000", 1)
+    makeRect(37, 55, "10%", "100%", "#00000", 1)
+    makeRect(59, 40, "10%", "100%", "#00000", 1)
+    
+    makeImage("http://img.pngget.com/clip2/p441nmxd5la.png", 28, 32, 137, 50, 1)
+    
+    makeRect(115, 35, "12%", "100%", "#00000", 1)
+    makeRect(145, 55, "10%", "100%", "#00000", 1)
+    makeRect(170, 40, "10%", "100%", "#00000", 1)
+    
+    makeRect(0, 80, "100%", "50%", "#00000", 1)
+    
+    makePolygon("145,56 155,48 165,56", "black", 1)
+    
+    makeText("Welcome To Paris!", 74, 10, 8, "Caveat Brush", "#A8C0C2", 1)
 }
 
-
-// Fill in this function so that it draws something using SVG shapes!
-// You need to use at least 3 different types of shape.
-// Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createSecondScene() {
     
+    makeRect(6, 60, "8%", "100%", "#00000", 1)
+    makeRect(24, 40, "10%", "100%", "#00000", 1)
+    makeRect(48, 46, "8%", "100%", "#00000", 1)
+    makeRect(68, 50, "7%", "100%", "#00000", 1)
+    
+    makeImage("https://d30y9cdsu7xlg0.cloudfront.net/png/84812-200.png", 65, 20, 65, 65, 1)
+    
+    makeRect(115, 40, "10%", "100%", "#00000", 1)
+    makeRect(145, 60, "8%", "100%", "#00000", 1)
+    makeRect(170, 45, "8%", "100%", "#00000", 1)
+    
+    makeRect(0, 80, "100%", "50%", "#00000", 1)
+    
+    makeCircle(14, 60, "4%", "#00000", 1)
+    makePolygon("13,81 14,30 15,81", "black", 1)
+    
+    makeText("Welcome To New York!", 74, 10, 8, "Caveat Brush", "#A8C0C2", 1)
 }
 
-
-// Fill in this function so that it draws something using SVG shapes!
-// You need to use at least 3 different types of shape.
-// Remember, for the shapes to show up on the canvas, you'll need to CALL the function.
 function createThirdScene() {
+    makeRect(6, 63, "8%", "100%", "#00000", 1)
+    makeRect(24, 43, "10%", "100%", "#00000", 1)
+    makeRect(48, 49, "8%", "100%", "#00000", 1)
+    
+    
+    makePolygon("68,81 90,60 112,81", "black", 1)
+    
+    makeRect(115, 43, "10%", "100%", "#00000", 1)
+    makeRect(145, 63, "8%", "100%", "#00000", 1)
+    makeRect(170, 48, "8%", "100%", "#00000", 1)
+    
+    makeRect(0, 80, "100%", "50%", "#00000", 1)
+    
+    makeCircle(178, 48, "5%", "#00000", 1)
+    
+    makeText("Welcome To Egypt!", 74, 10, 8, "Caveat Brush", "#A8C0C2", 1)
+}
+
+function createSunset() {
+    makeImage("http://il3.picdn.net/shutterstock/videos/13402676/thumb/1.jpg", -20, -10, "120%", "120%", 1)
+}
+
+function createNight() {
+    makeImage("http://il2.picdn.net/shutterstock/videos/743689/thumb/1.jpg?i10c=img.resize(height:160)", -20, -10, "120%", "120%", 1)
     
 }
 
+function createMan(){
+makeImage("http://www.gifs.net/Animation11/Transportation/Helicopters/big_helicopter.gif", 25, 16, "10%", "10%", 1)
+}
 
-
-
-
-// FILL IN THIS FUNCTION!
-// This function is called whenever you press the "Go!" button.
 function createRandomScene() {
-    // Generate a random number between 0 and 1, and store it in a variable.
     
-    // If the number is less than 0.33, call the function to create your first scene.
-    
-    
-    
-    // Else, if the number is less than 0.67, call the function to create your second scene.
+    var random1 = Math.random();
+    var random2 = Math.random();
+    var random3 = Math.random();
     
     
-    
-    // Else, call the function to create your third scene.
-    
-    
-    
+    if(random1 < 0.33){
+        if(random2 < 0.5){
+        createNight()
+        createFirstScene()
+        }else{
+        createSunset()
+        createFirstScene()        
+        }
+        if(random3 > 0.7){
+        createMan()}
+    }
+    else if(random1 < 0.67){
+        if(random2 < 0.5){
+        createNight()
+        createSecondScene()
+        }else{
+        createSunset()
+        createSecondScene()        
+        }
+        if(random3 > 0.7){
+        createMan() }
+    }
+    else{
+     if(random2 < 0.5){
+        createNight()
+        createThirdScene()
+        }else{
+        createSunset()
+        createThirdScene()        
+        }
+        if(random3 > 0.7){
+        createMan() }}
 }
 
+ 
 
 
-// DO NOT EDIT ANYTHING BELOW THIS LINE!
-// These are the functions you should call to
-// easily create shapes in JavaScript. Feel free
-// to check them out if you're curious how they
-// work, but don't change them!
-// <3 Ms. Squires
 function makeCircle(cx, cy, r, fill, opacity) {
   var circle = document.createElementNS(namespace, "circle")
   circle.setAttribute("cx", cx)
