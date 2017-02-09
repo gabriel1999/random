@@ -69,6 +69,11 @@ function createNight() {
     
 }
 
+function createCloudy() {
+    makeImage("https://ih1.redbubble.net/image.4738783.0472/flat,1000x1000,075,f.jpg", -40, -50, "140%", "140%", 1)
+    
+}
+
 function createMan(){
 makeImage("http://www.gifs.net/Animation11/Transportation/Helicopters/big_helicopter.gif", 25, 16, "10%", "10%", 1)
 }
@@ -81,37 +86,47 @@ function createRandomScene() {
     
     
     if(random1 < 0.33){
-        if(random2 < 0.5){
+        if(random2 < 0.33){
         createNight()
         createFirstScene()
-        }else{
+        }else if (random2 < 0.76){
         createSunset()
         createFirstScene()        
+        }else{
+        createCloudy()
+        createFirstScene()
         }
         if(random3 > 0.7){
         createMan()}
     }
     else if(random1 < 0.67){
-        if(random2 < 0.5){
+        if(random2 < 0.33){
         createNight()
         createSecondScene()
-        }else{
+        }else if (random2 < 0.76){
         createSunset()
         createSecondScene()        
+        }else{
+        createCloudy()
+        createSecondScene()
         }
         if(random3 > 0.7){
         createMan() }
     }
     else{
-     if(random2 < 0.5){
+     if(random2 < 0.33){
         createNight()
         createThirdScene()
-        }else{
+        }else if (random2 < 0.76){
         createSunset()
         createThirdScene()        
+        }else{
+        createCloudy()
+        createThirdScene()
         }
         if(random3 > 0.7){
-        createMan() }}
+        createMan() }
+    }
 }
 
  
